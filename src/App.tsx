@@ -37,21 +37,3 @@ export default function App() {
     </div>
   );
 }
-
-class ShoppingList extends React.Component {
-  render() {
-    return (
-      <div className="shopping-list">
-        <button
-          className=""
-          onClick={() => console.log("i love react")}
-        ></button>
-        <ul>
-          <li>Instagram</li>
-          <li>WhatsApp</li>
-          <li>Oculus</li>
-        </ul>
-      </div>
-    );
-  }
-}
