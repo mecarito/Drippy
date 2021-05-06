@@ -3,6 +3,8 @@ import logo from "./logo.svg";
 import "./App.css";
 
 export default function App() {
+  const arr = Array(9).fill(8);
+  console.log(arr);
   return (
     <div className="App">
       <header className="App-header">
