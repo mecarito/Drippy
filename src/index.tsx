@@ -6,7 +6,7 @@ import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App name="james and sara" />
   </React.StrictMode>,
   document.getElementById("root")
 );
