@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 
-export default class App extends React.Component<any, any> {
+export default class App extends React.Component<{}, { date: Date }> {
   timerID: any;
   constructor(props: any) {
     super(props);
@@ -9,7 +9,7 @@ export default class App extends React.Component<any, any> {
   }
 
   componentDidMount() {
-    this.timerID = setInterval(() => this.tick(), 1000);
+    this.timerID = setInterval(() => this.tick(), 100);
   }
   componentWillUnmount() {
     clearInterval(this.timerID);
@@ -23,7 +23,7 @@ export default class App extends React.Component<any, any> {
     return (
       <div>
         <h1> Today's time</h1>
-        <h1> {this.state.date.tolocaleTimeString()}</h1>
+        <h1> {this.state.date.toLocaleTimeString()}</h1>
       </div>
     );
   }
