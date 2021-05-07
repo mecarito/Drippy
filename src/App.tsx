@@ -1,11 +1,11 @@
 import React from "react";
 import "./App.css";
 
-export default class App extends React.Component<{}, { date: number }> {
+export default class App extends React.Component<{}, { counter: number }> {
   timerID: any;
   constructor(props: any) {
     super(props);
-    this.state = { date: 0 };
+    this.state = { counter: 0 };
   }
 
   componentDidMount() {
@@ -15,14 +15,16 @@ export default class App extends React.Component<{}, { date: number }> {
     clearInterval(this.timerID);
   }
   tick() {
-    this.setState({ date: Math.random() });
+    this.setState((state) => ({
+      counter: state.counter + 4,
+    }));
   }
 
   render() {
     return (
       <div>
         <h1> Today's time</h1>
-        <h1> {this.state.date}</h1>
+        <h1> {this.state.counter}</h1>
       </div>
     );
   }
