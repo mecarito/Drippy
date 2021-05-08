@@ -1,6 +1,11 @@
 import React from "react";
 import "./App.css";
 
+// interface Form {
+//   value: string;
+//   age: number;
+// }
+
 export default class App extends React.Component<{}, { value: string }> {
   constructor(props: any) {
     super(props);
@@ -13,7 +18,7 @@ export default class App extends React.Component<{}, { value: string }> {
     this.setState({
       value: event.target.value,
     });
-    console.log(event.target);
+    console.log(event.target.value);
   }
 
   handleSubmit(event: any) {
@@ -30,6 +35,10 @@ export default class App extends React.Component<{}, { value: string }> {
             value={this.state.value}
             onChange={this.handleChange}
           />
+        </label>
+        <label htmlFor="age">
+          Age:
+          <input type="number" />
         </label>
         <input type="submit" value="submit" />
       </form>
