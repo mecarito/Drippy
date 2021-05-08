@@ -9,29 +9,30 @@ export default class App extends React.Component<{}, { value: string }> {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleChange() {
-    this.setState({});
+  handleChange(event: any) {
+    this.setState({
+      value: event.target.value,
+    });
+    console.log(event.target);
   }
 
-  handleSubmit(e: MouseEvent) {
+  handleSubmit(event: any) {
+    event.preventDefault();
     alert(`your name is: ${this.state.value}`);
-    e.preventDefault();
   }
   render() {
     return (
-      <div>
-        <label htmlFor="name">Name</label>
-        <input
-          type="text"
-          value={this.state.value}
-          onChange={this.handleChange}
-        />
-        <input
-          type="submit"
-          value="submit"
-          onSubmit={(e) => this.handleSubmit}
-        />
-      </div>
+      <form onSubmit={this.handleSubmit}>
+        <label htmlFor="name">
+          Name:
+          <input
+            type="text"
+            value={this.state.value}
+            onChange={this.handleChange}
+          />
+        </label>
+        <input type="submit" value="submit" />
+      </form>
     );
   }
 }
