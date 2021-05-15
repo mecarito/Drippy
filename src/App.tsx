@@ -4,113 +4,168 @@ import "./App.css";
 export default class App extends React.Component {
   render() {
     return (
-      <div className="flex p-6">
-        <div className="flex-none w-44 relative">
-          <img
-            src="https://images.unsplash.com/photo-1578774296842-c45e472b3028?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8ZmFjZXN8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
-            alt=""
-            className="absolute inset-0 w-full h-full object-cover rounded-lg"
-          />
+      <>
+        <div className="mt-10 sm:mt-0">
+          <div className="md:grid md:grid-cols-3 md:gap-6">
+            <div className="md:col-span-1">
+              <div className="px-4 sm:px-0">
+                <h3 className="text-lg font-medium leading-6 text-gray-900">
+                  Personal Information
+                </h3>
+                <p className="mt-1 text-sm text-gray-600">
+                  Use a permanent address where you can receive mail.
+                </p>
+              </div>
+            </div>
+            <div className="mt-5 md:mt-0 md:col-span-2">
+              <form action="#" method="POST">
+                <div className="shadow overflow-hidden sm:rounded-md">
+                  <div className="px-4 py-5 bg-white sm:p-6">
+                    <div className="grid grid-cols-6 gap-6">
+                      <div className="col-span-6 sm:col-span-3">
+                        <label
+                          htmlFor="first_name"
+                          className="block text-sm font-medium text-gray-700"
+                        >
+                          First name
+                        </label>
+                        <input
+                          type="text"
+                          name="first_name"
+                          id="first_name"
+                          autoComplete="given-name"
+                          className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                        />
+                      </div>
+
+                      <div className="col-span-6 sm:col-span-3">
+                        <label
+                          htmlFor="last_name"
+                          className="block text-sm font-medium text-gray-700"
+                        >
+                          Last name
+                        </label>
+                        <input
+                          type="text"
+                          name="last_name"
+                          id="last_name"
+                          autoComplete="family-name"
+                          className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                        />
+                      </div>
+
+                      <div className="col-span-6 sm:col-span-4">
+                        <label
+                          htmlFor="email_address"
+                          className="block text-sm font-medium text-gray-700"
+                        >
+                          Email address
+                        </label>
+                        <input
+                          type="text"
+                          name="email_address"
+                          id="email_address"
+                          autoComplete="email"
+                          className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                        />
+                      </div>
+
+                      <div className="col-span-6 sm:col-span-3">
+                        <label
+                          htmlFor="country"
+                          className="block text-sm font-medium text-gray-700"
+                        >
+                          Country / Region
+                        </label>
+                        <select
+                          id="country"
+                          name="country"
+                          autoComplete="country"
+                          className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                        >
+                          <option>United States</option>
+                          <option>Canada</option>
+                          <option>Mexico</option>
+                        </select>
+                      </div>
+
+                      <div className="col-span-6">
+                        <label
+                          htmlFor="street_address"
+                          className="block text-sm font-medium text-gray-700"
+                        >
+                          Street address
+                        </label>
+                        <input
+                          type="text"
+                          name="street_address"
+                          id="street_address"
+                          autoComplete="street-address"
+                          className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                        />
+                      </div>
+
+                      <div className="col-span-6 sm:col-span-6 lg:col-span-2">
+                        <label
+                          htmlFor="city"
+                          className="block text-sm font-medium text-gray-700"
+                        >
+                          City
+                        </label>
+                        <input
+                          type="text"
+                          name="city"
+                          id="city"
+                          className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                        />
+                      </div>
+
+                      <div className="col-span-6 sm:col-span-3 lg:col-span-2">
+                        <label
+                          htmlFor="state"
+                          className="block text-sm font-medium text-gray-700"
+                        >
+                          State / Province
+                        </label>
+                        <input
+                          type="text"
+                          name="state"
+                          id="state"
+                          className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                        />
+                      </div>
+
+                      <div className="col-span-6 sm:col-span-3 lg:col-span-2">
+                        <label
+                          htmlFor="postal_code"
+                          className="block text-sm font-medium text-gray-700"
+                        >
+                          ZIP / Postal
+                        </label>
+                        <input
+                          type="text"
+                          name="postal_code"
+                          id="postal_code"
+                          autoComplete="postal-code"
+                          className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="px-4 py-3 bg-gray-50 text-right sm:px-6">
+                    <button
+                      type="submit"
+                      className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                    >
+                      Save
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
         </div>
-        <form className="flex-auto pl-6">
-          <div className="flex flex-wrap items-baseline">
-            <h1 className="w-full flex-none font-semibold mb-2.5">
-              Kids Jumpsuit
-            </h1>
-            <div className="text-4xl leading-7 font-bold text-purple-600">
-              $39.00
-            </div>
-            <div className="text-sm font-medium text-gray-400 ml-3">
-              In stock
-            </div>
-          </div>
-          <div className="flex items-baseline my-8">
-            <div className="space-x-2 flex text-sm font-medium">
-              <label>
-                <input
-                  className="w-9 h-9 flex items-center justify-center rounded-full bg-purple-700 text-white"
-                  name="size"
-                  type="radio"
-                  value="xs"
-                  checked
-                />
-                XS
-              </label>
-              <label>
-                <input
-                  className="w-9 h-9 flex items-center justify-center rounded-full border-2 border-gray-200"
-                  name="size"
-                  type="radio"
-                  value="s"
-                />
-                S
-              </label>
-              <label>
-                <input
-                  className="w-9 h-9 flex items-center justify-center rounded-full border-2 border-gray-200"
-                  name="size"
-                  type="radio"
-                  value="m"
-                />
-                M
-              </label>
-              <label>
-                <input
-                  className="w-9 h-9 flex items-center justify-center rounded-full border-2 border-gray-200"
-                  name="size"
-                  type="radio"
-                  value="l"
-                />
-                L
-              </label>
-              <label>
-                <input
-                  className="w-9 h-9 flex items-center justify-center rounded-full border-2 border-gray-200"
-                  name="size"
-                  type="radio"
-                  value="xl"
-                />
-                XL
-              </label>
-            </div>
-            <div className="ml-3 text-sm text-gray-500 underline">
-              Size Guide
-            </div>
-          </div>
-          <div className="flex space-x-3 mb-4 text-sm font-semibold">
-            <div className="flex-auto flex space-x-3">
-              <button
-                className="w-1/2 flex items-center justify-center rounded-full bg-purple-700 text-white"
-                type="submit"
-              >
-                Buy now
-              </button>
-              <button
-                className="w-1/2 flex items-center justify-center rounded-full bg-purple-50 text-purple-700"
-                type="button"
-              >
-                Add to bag
-              </button>
-            </div>
-            <button
-              className="flex-none flex items-center justify-center w-9 h-9 rounded-full bg-purple-50 text-purple-700"
-              type="button"
-              aria-label="like"
-            >
-              <svg width="20" height="20" fill="currentColor">
-                <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
-                  d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
-                />
-              </svg>
-            </button>
-          </div>
-          <p className="text-sm text-gray-500">
-            Free shipping on all continental US orders.
-          </p>
-        </form>
-      </div>
+      </>
     );
   }
 }
