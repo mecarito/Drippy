@@ -4,29 +4,31 @@ import "./App.css";
 export default class App extends React.Component {
   render() {
     return (
-      <div className="flex">
-        <div className="flex-none w-48 relative">
+      <div className="flex p-6">
+        <div className="flex-none w-44 relative">
           <img
             src="https://images.unsplash.com/photo-1578774296842-c45e472b3028?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8ZmFjZXN8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
             alt=""
-            className="absolute inset-0 w-full h-full object-cover"
+            className="absolute inset-0 w-full h-full object-cover rounded-lg"
           />
         </div>
-        <form className="flex-auto p-6">
-          <div className="flex flex-wrap">
-            <h1 className="flex-auto text-xl font-semibold">
-              classNameic Utility Jacket
+        <form className="flex-auto pl-6">
+          <div className="flex flex-wrap items-baseline">
+            <h1 className="w-full flex-none font-semibold mb-2.5">
+              Kids Jumpsuit
             </h1>
-            <div className="text-xl font-semibold text-gray-500">$110.00</div>
-            <div className="w-full flex-none text-sm font-medium text-gray-500 mt-2">
+            <div className="text-4xl leading-7 font-bold text-purple-600">
+              $39.00
+            </div>
+            <div className="text-sm font-medium text-gray-400 ml-3">
               In stock
             </div>
           </div>
-          <div className="flex items-baseline mt-4 mb-6">
-            <div className="space-x-2 flex">
+          <div className="flex items-baseline my-8">
+            <div className="space-x-2 flex text-sm font-medium">
               <label>
                 <input
-                  className="w-9 h-9 flex items-center justify-center bg-gray-100 rounded-lg"
+                  className="w-9 h-9 flex items-center justify-center rounded-full bg-purple-700 text-white"
                   name="size"
                   type="radio"
                   value="xs"
@@ -36,7 +38,7 @@ export default class App extends React.Component {
               </label>
               <label>
                 <input
-                  className="w-9 h-9 flex items-center justify-center"
+                  className="w-9 h-9 flex items-center justify-center rounded-full border-2 border-gray-200"
                   name="size"
                   type="radio"
                   value="s"
@@ -45,7 +47,7 @@ export default class App extends React.Component {
               </label>
               <label>
                 <input
-                  className="w-9 h-9 flex items-center justify-center"
+                  className="w-9 h-9 flex items-center justify-center rounded-full border-2 border-gray-200"
                   name="size"
                   type="radio"
                   value="m"
@@ -54,7 +56,7 @@ export default class App extends React.Component {
               </label>
               <label>
                 <input
-                  className="w-9 h-9 flex items-center justify-center"
+                  className="w-9 h-9 flex items-center justify-center rounded-full border-2 border-gray-200"
                   name="size"
                   type="radio"
                   value="l"
@@ -63,7 +65,7 @@ export default class App extends React.Component {
               </label>
               <label>
                 <input
-                  className="w-9 h-9 flex items-center justify-center"
+                  className="w-9 h-9 flex items-center justify-center rounded-full border-2 border-gray-200"
                   name="size"
                   type="radio"
                   value="xl"
@@ -71,27 +73,27 @@ export default class App extends React.Component {
                 XL
               </label>
             </div>
-            <div className="ml-auto text-sm text-gray-500 underline">
+            <div className="ml-3 text-sm text-gray-500 underline">
               Size Guide
             </div>
           </div>
-          <div className="flex space-x-3 mb-4 text-sm font-medium">
+          <div className="flex space-x-3 mb-4 text-sm font-semibold">
             <div className="flex-auto flex space-x-3">
               <button
-                className="w-1/2 flex items-center justify-center rounded-md bg-black text-white"
+                className="w-1/2 flex items-center justify-center rounded-full bg-purple-700 text-white"
                 type="submit"
               >
                 Buy now
               </button>
               <button
-                className="w-1/2 flex items-center justify-center rounded-md border border-gray-300"
+                className="w-1/2 flex items-center justify-center rounded-full bg-purple-50 text-purple-700"
                 type="button"
               >
                 Add to bag
               </button>
             </div>
             <button
-              className="flex-none flex items-center justify-center w-9 h-9 rounded-md text-gray-400 border border-gray-300"
+              className="flex-none flex items-center justify-center w-9 h-9 rounded-full bg-purple-50 text-purple-700"
               type="button"
               aria-label="like"
             >
