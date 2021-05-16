@@ -59,7 +59,7 @@ export default class App extends React.Component {
                           htmlFor="email_address"
                           className="block text-sm font-medium text-gray-700"
                         >
-                          Email address
+                          Email
                         </label>
                         <input
                           type="text"
