@@ -165,6 +165,10 @@ export default class App extends React.Component {
             </div>
           </div>
         </div>
+        <input
+          type="text"
+          className="rounded-md focus:ring-2 focus:ring-purple-500 border-gray-300 focus:border-transparent"
+        />
       </>
     );
   }
