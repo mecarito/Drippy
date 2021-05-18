@@ -4,8 +4,13 @@ module.exports = {
     theme: {
         extend: {},
     },
-    variants: {
-        extend: {},
-    },
+    //   variants: {
+    //     extend: {},
+    //   },
+    // variants: {
+    //     extend: {
+    //         padding: ["hover"],
+    //     },
+    // },
     plugins: [require("@tailwindcss/forms")],
 };
