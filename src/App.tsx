@@ -161,14 +161,21 @@ export default class App extends React.Component {
                     </button>
                   </div>
                 </div>
+                <input
+                  type="checkbox"
+                  className="appearance-none checked:bg-blue-600 checked:border-transparent ..."
+                />
               </form>
             </div>
           </div>
         </div>
         <input
           type="text"
-          className="rounded-md focus:ring-2 hover:rotate-45 focus:ring-purple-500 border-gray-300 focus:border-transparent"
+          className="rounded-md focus:ring-2 focus:ring-blue-600  border-gray-300 focus:border-transparent"
         />
+        <div className="container px-16 mx-auto">
+          <h1> i love tailwindcss </h1>
+        </div>
       </>
     );
   }
