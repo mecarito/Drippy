@@ -169,11 +169,11 @@ export default class App extends React.Component {
             </div>
           </div>
         </div>
-        <div className="grid grid-cols-2">
-          <div>1</div>
+        <div className="grid grid-row-2">
+          <div className="col-end-2">1</div>
           <div>2</div>
           <div>3</div>
-          <div>4</div>
+          <div className="col-end-2">4</div>
         </div>
       </>
     );
