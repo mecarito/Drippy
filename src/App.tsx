@@ -169,12 +169,11 @@ export default class App extends React.Component {
             </div>
           </div>
         </div>
-        <input
-          type="text"
-          className="rounded-md focus:ring-2 focus:ring-blue-600  border-gray-300 focus:border-transparent"
-        />
-        <div className="container px-16 mx-auto">
-          <h1> i love tailwindcss </h1>
+        <div className="grid grid-cols-2">
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+          <div>4</div>
         </div>
       </>
     );
