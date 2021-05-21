@@ -1,7 +1,14 @@
 import React from "react";
 import "./App.css";
 
-export default class App extends React.Component {
+export default class App extends React.Component<{}, {}> {
+  inputref: React.RefObject<unknown>;
+
+  constructor(props: string) {
+    super(props);
+    this.inputref = React.createRef();
+  }
+
   render() {
     return (
       <>
@@ -31,6 +38,7 @@ export default class App extends React.Component {
                         </label>
                         <input
                           type="text"
+                          defaultValue="peter mecar"
                           name="first_name"
                           id="first_name"
                           autoComplete="given-name"
