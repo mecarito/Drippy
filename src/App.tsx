@@ -4,7 +4,7 @@ import "./App.css";
 export default function App() {
   let [count, setcount] = useState(0);
   let [firstname, setfirstname] = useState("react is cool");
-  let [data, setdata] = useState("");
+  // let [data, setdata] = useState("");
   let [results] = useFetchdata();
 
   function getfirstname(event: any) {
@@ -12,15 +12,15 @@ export default function App() {
   }
 
   function useFetchdata() {
-    useEffect(() => {
-      async function fetchdata() {
-        let response = await fetch("https://randomuser.me/api/");
-        let info = response.json();
-        await info.then((val) => setdata(val.results[0]));
-      }
+    // useEffect(() => {
+    //   async function fetchdata() {
+    //     let response = await fetch("https://randomuser.me/api/");
+    //     let info = response.json();
+    //     await info.then((val) => setdata(val.results[0]));
+    //   }
 
-      fetchdata();
-    }, []);
+    //   fetchdata();
+    // }, []);
     return [{ name: "james" }];
   }
 
