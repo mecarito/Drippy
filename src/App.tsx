@@ -3,13 +3,7 @@ import "./App.css";
 
 export default function App() {
   let [count, setcount] = useState(0);
-  let [firstname, setfirstname] = useState("");
-
-  function names(name: string) {
-    return { name };
-  }
-
-  const { name } = names("mary");
+  let [firstname, setfirstname] = useState("react is cool");
 
   function getfirstname(event: any) {
     setfirstname(event.target.value);
@@ -17,11 +11,8 @@ export default function App() {
 
   useEffect(() => {
     document.title = firstname;
-    console.log(name);
-    return () => {
-      setfirstname("");
-    };
-  });
+    return () => {};
+  }, []);
 
   return (
     <>
