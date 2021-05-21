@@ -1,11 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useMemo } from "react";
 import "./App.css";
 
 export default function App() {
   let [count, setcount] = useState(0);
   let [firstname, setfirstname] = useState("react is cool");
   // let [data, setdata] = useState("");
+  const [a, seta] = useState(0);
+  const [b, setb] = useState(0);
   let [results] = useFetchdata();
+  let sum = useMemo(() => () => a + b, [a, b]);
 
   function getfirstname(event: any) {
     setfirstname(event.target.value);
@@ -26,7 +29,7 @@ export default function App() {
 
   return (
     <>
-      {console.log(results)}
+      {console.log(sum(), a, b)}
       <div className="mt-10 sm:mt-0">
         <div className="md:grid md:grid-cols-3 md:gap-6">
           <div className="md:col-span-1">
@@ -52,7 +55,7 @@ export default function App() {
                         First name
                       </label>
                       <input
-                        onChange={(e) => getfirstname(e)}
+                        onChange={() => seta(a + 1)}
                         type="text"
                         placeholder="name"
                         name="first_name"
@@ -69,6 +72,7 @@ export default function App() {
                         Last name
                       </label>
                       <input
+                        onChange={() => setb(b + 1)}
                         type="text"
                         name="last_name"
                         id="last_name"
