@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useRef } from "react";
 import "./App.css";
 
 export default function App() {
@@ -9,6 +9,7 @@ export default function App() {
   const [b, setb] = useState(0);
   let [results] = useFetchdata();
   let sum = useMemo(() => () => a + b, [a, b]);
+  const parentref = useRef(null);
 
   function getfirstname(event: any) {
     setfirstname(event.target.value);
@@ -47,7 +48,7 @@ export default function App() {
               <div className="shadow overflow-hidden sm:rounded-md">
                 <div className="px-4 py-5 bg-white sm:p-6">
                   <div className="grid grid-cols-6 gap-6">
-                    <div className="col-span-6 sm:col-span-3">
+                    <div className="col-span-6 sm:col-span-3" ref={parentref}>
                       <label
                         htmlFor="first_name"
                         className="block text-sm font-medium text-gray-700"
@@ -88,7 +89,7 @@ export default function App() {
               </div>
             </form>
             <button
-              onClick={() => setcount(count + 10)}
+              onClick={() => console.log(parentref.current)}
               className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
             >
               Save
