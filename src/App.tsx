@@ -4,18 +4,29 @@ import "./App.css";
 export default function App() {
   let [count, setcount] = useState(0);
   let [firstname, setfirstname] = useState("react is cool");
+  let [data, setdata] = useState("");
+  let [results] = useFetchdata();
 
   function getfirstname(event: any) {
     setfirstname(event.target.value);
   }
 
-  useEffect(() => {
-    document.title = firstname;
-    return () => {};
-  }, []);
+  function useFetchdata() {
+    useEffect(() => {
+      async function fetchdata() {
+        let response = await fetch("https://randomuser.me/api/");
+        let info = response.json();
+        await info.then((val) => setdata(val.results[0]));
+      }
+
+      fetchdata();
+    }, []);
+    return [{ name: "james" }];
+  }
 
   return (
     <>
+      {console.log(results)}
       <div className="mt-10 sm:mt-0">
         <div className="md:grid md:grid-cols-3 md:gap-6">
           <div className="md:col-span-1">
