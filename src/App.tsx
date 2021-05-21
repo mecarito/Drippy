@@ -1,7 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 
 export default function App() {
+  let [count, setcount] = useState(0);
+  let [firstname, setfirstname] = useState("");
+
+  function getfirstname(event: any) {
+    setfirstname(event.target.value);
+  }
+
   return (
     <>
       <div className="mt-10 sm:mt-0">
@@ -29,12 +36,13 @@ export default function App() {
                         First name
                       </label>
                       <input
+                        onChange={(e) => getfirstname(e)}
                         type="text"
-                        defaultValue="peter mecar"
+                        placeholder="name"
                         name="first_name"
                         id="first_name"
                         autoComplete="given-name"
-                        className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                        className="placeholder-green-600-500 mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                       />
                     </div>
 
@@ -55,16 +63,17 @@ export default function App() {
                     </div>
                   </div>
                 </div>
-                <div className="px-4 py-3 bg-gray-50 text-right sm:px-6">
-                  <button
-                    type="submit"
-                    className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                  >
-                    Save
-                  </button>
-                </div>
+                <h1> {count}</h1>
+                <p> firstname is {firstname}</p>
+                <div className="px-4 py-3 bg-gray-50 text-right sm:px-6"></div>
               </div>
             </form>
+            <button
+              onClick={() => setcount(count + 10)}
+              className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+            >
+              Save
+            </button>
           </div>
         </div>
       </div>
