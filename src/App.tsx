@@ -1,13 +1,27 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 
 export default function App() {
   let [count, setcount] = useState(0);
   let [firstname, setfirstname] = useState("");
 
+  function names(name: string) {
+    return { name };
+  }
+
+  const { name } = names("mary");
+
   function getfirstname(event: any) {
     setfirstname(event.target.value);
   }
+
+  useEffect(() => {
+    document.title = firstname;
+    console.log(name);
+    return () => {
+      setfirstname("");
+    };
+  });
 
   return (
     <>
@@ -45,7 +59,6 @@ export default function App() {
                         className="placeholder-green-600-500 mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                       />
                     </div>
-
                     <div className="col-span-6 sm:col-span-3">
                       <label
                         htmlFor="last_name"
