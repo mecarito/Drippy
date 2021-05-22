@@ -1,35 +1,38 @@
 import React, { useState, useMemo, useRef } from "react";
 import "./App.css";
+import { useFetchdata } from "./hook";
 
 export default function App() {
   let [count, setcount] = useState(0);
   let [firstname, setfirstname] = useState("react is cool");
   // let [data, setdata] = useState("");
+  let info = useFetchdata("peter");
   const [a, seta] = useState(0);
   const [b, setb] = useState(0);
-  let [results] = useFetchdata();
+  // let [results] = useFetchdata();
   let sum = useMemo(() => () => a + b, [a, b]);
-  const parentref = useRef(null);
+  let parentref = useRef(null);
 
   function getfirstname(event: any) {
     setfirstname(event.target.value);
   }
 
-  function useFetchdata() {
-    // useEffect(() => {
-    //   async function fetchdata() {
-    //     let response = await fetch("https://randomuser.me/api/");
-    //     let info = response.json();
-    //     await info.then((val) => setdata(val.results[0]));
-    //   }
+  // function useFetchdata() {
+  //   // useEffect(() => {
+  //   //   async function fetchdata() {
+  //   //     let response = await fetch("https://randomuser.me/api/");
+  //   //     let info = response.json();
+  //   //     await info.then((val) => setdata(val.results[0]));
+  //   //   }
 
-    //   fetchdata();
-    // }, []);
-    return [{ name: "james" }];
-  }
+  //   //   fetchdata();
+  //   // }, []);
+  //   return [{ name: "james" }];
+  // }
 
   return (
     <>
+      {info}
       {console.log(sum(), a, b)}
       <div className="mt-10 sm:mt-0">
         <div className="md:grid md:grid-cols-3 md:gap-6">
@@ -48,7 +51,7 @@ export default function App() {
               <div className="shadow overflow-hidden sm:rounded-md">
                 <div className="px-4 py-5 bg-white sm:p-6">
                   <div className="grid grid-cols-6 gap-6">
-                    <div className="col-span-6 sm:col-span-3" ref={parentref}>
+                    <div className="col-span-6 sm:col-span-3">
                       <label
                         htmlFor="first_name"
                         className="block text-sm font-medium text-gray-700"
@@ -73,6 +76,7 @@ export default function App() {
                         Last name
                       </label>
                       <input
+                        ref={parentref}
                         onChange={() => setb(b + 1)}
                         type="text"
                         name="last_name"
