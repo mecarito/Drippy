@@ -77,7 +77,7 @@ export default function App() {
                       </label>
                       <input
                         ref={parentref}
-                        onChange={() => setb(b + 1)}
+                        onChange={() => setb(b + 3)}
                         type="text"
                         name="last_name"
                         id="last_name"
