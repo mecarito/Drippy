@@ -3,8 +3,6 @@ import "./App.css";
 import { useFetchdata } from "./hook";
 
 export default function App() {
-  let [count, setcount] = useState(0);
-  let [firstname, setfirstname] = useState("react is cool");
   // let [data, setdata] = useState("");
   let info = useFetchdata("peter");
   const [a, seta] = useState(0);
@@ -12,23 +10,6 @@ export default function App() {
   // let [results] = useFetchdata();
   let sum = useMemo(() => () => a + b, [a, b]);
   let parentref = useRef(null);
-
-  function getfirstname(event: any) {
-    setfirstname(event.target.value);
-  }
-
-  // function useFetchdata() {
-  //   // useEffect(() => {
-  //   //   async function fetchdata() {
-  //   //     let response = await fetch("https://randomuser.me/api/");
-  //   //     let info = response.json();
-  //   //     await info.then((val) => setdata(val.results[0]));
-  //   //   }
-
-  //   //   fetchdata();
-  //   // }, []);
-  //   return [{ name: "james" }];
-  // }
 
   return (
     <>
@@ -87,8 +68,6 @@ export default function App() {
                     </div>
                   </div>
                 </div>
-                <h1> {count}</h1>
-                <p> firstname is {firstname}</p>
                 <div className="px-4 py-3 bg-gray-50 text-right sm:px-6"></div>
               </div>
             </form>
