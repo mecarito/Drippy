@@ -1,9 +1,16 @@
 /// <reference types="web-bluetooth" />
 
-import React from "react";
+import React, { useEffect } from "react";
 import "./App.css";
 
 export default function App() {
+  useEffect(() => {
+    connection();
+    return () => {
+      // cleanup
+    };
+  }, []);
+
   function connection() {
     navigator.bluetooth
       .requestDevice({
@@ -20,7 +27,6 @@ export default function App() {
 
   return (
     <div className="flex flex-col gap-8 items-center">
-      {connection}
       <h1 className="text-indigo-700 text-3xl font-semibold">
         Bluetooth connection
       </h1>
