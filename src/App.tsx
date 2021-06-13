@@ -6,7 +6,7 @@ import "./App.css";
 export default function App() {
   function connection() {
     navigator.bluetooth
-      .requestDevice({ filters: [{ services: ["battery_service"] }] })
+      .requestDevice()
       .then((device) => {
         /* … */
       })
@@ -16,25 +16,20 @@ export default function App() {
   }
 
   async function test() {
-    let options = {
-      filters: [
-        { services: ["heart_rate"] },
-        { services: [0x1802, 0x1803] },
-        { services: ["c48e6067-5295-48d3-8d5c-0395f61792b1"] },
-        { name: "ExampleName" },
-        { namePrefix: "Prefix" },
-      ],
-      optionalServices: ["battery_service"],
-    };
-
     navigator.bluetooth
-      .requestDevice(options)
-      .then(function (device) {
-        console.log("Name: " + device.name);
-        // Do something with the device.
+      .requestDevice({
+        filters: [
+          {
+            name: "E6",
+          },
+        ],
+        // optionalServices: ["battery_service"], // Required to access service later.
       })
-      .catch(function (error) {
-        console.log("Something went wrong. " + error);
+      .then((device) => {
+        /* … */
+      })
+      .catch((error) => {
+        console.error(error);
       });
   }
 
@@ -47,13 +42,13 @@ export default function App() {
         className="py-4 px-16 text-white bg-indigo-700 w-15 text-lg rounded-lg"
         onClick={test}
       >
-        Test
+        My device
       </button>
       <button
         className="py-4 px-16 text-white bg-indigo-700 w-15 text-lg rounded-lg"
         onClick={connection}
       >
-        Scan
+        All
       </button>
     </div>
   );
