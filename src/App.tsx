@@ -8,10 +8,10 @@ export default function App() {
     navigator.bluetooth
       .requestDevice({
         acceptAllDevices: true,
-        optionalServices: ["battery_service"], // Required to access service later.
+        // optionalServices: ["battery_service"], // Required to access service later.
       })
       .then((device) => {
-        /* … */
+        alert(device);
       })
       .catch((error) => {
         console.error(error);
