@@ -33,7 +33,7 @@ export default function Navbar() {
         anchor={"left"}
         open={visibility}
         onClose={() => toggleDrawer(false)}
-        className="fixed"
+        className="fixed "
       >
         <span
           className="material-icons absolute right-0 mr-4 mt-4"

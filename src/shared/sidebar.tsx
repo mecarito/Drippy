@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Sidebar() {
   return (
-    <div className="bg-drawercolor h-screen flex flex-col px-8 py-4 mt-8">
+    <div className="bg-drawercolor h-screen flex flex-col px-8 py-12 ">
       <div
         className="flex flex-row space-x-2 py-2 pr-24 pl-2 
       hover:bg-hover cursor-pointer rounded-md"
