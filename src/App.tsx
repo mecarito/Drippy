@@ -7,4 +7,9 @@ export default function App() {
       // cleanup
     };
   }, []);
+  return (
+    <div>
+      <h1> drippy </h1>
+    </div>
+  );
 }
