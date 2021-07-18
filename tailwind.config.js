@@ -7,6 +7,7 @@ module.exports = {
             colors: {
                 primary: "#DB4C3F",
                 drawercolor: "#FAFAFA",
+                hover: "#ECECEC",
             },
         },
     },

@@ -8,11 +8,12 @@ export default function Navbar() {
   function toggleDrawer(visibility: boolean) {
     setvisibility(visibility);
   }
+
   return (
     <>
       <div
         className="bg-primary text-white py-2 px-2 flex flex-row justify-between
-      cursor-pointer items-center"
+      cursor-pointer items-center fixed top-0 left-0 right-0"
       >
         <div className="flex flex-row gap-2">
           <span className="material-icons" onClick={() => toggleDrawer(true)}>
@@ -32,7 +33,16 @@ export default function Navbar() {
         anchor={"left"}
         open={visibility}
         onClose={() => toggleDrawer(false)}
+        className="fixed"
       >
+        <span
+          className="material-icons absolute right-0 mr-4 mt-4"
+          onClick={() => {
+            toggleDrawer(false);
+          }}
+        >
+          close
+        </span>
         <Sidebar />
       </Drawer>
     </>
