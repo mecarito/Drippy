@@ -5,6 +5,7 @@ import { closeAddTaskDialog } from "./reducers/taskdialog-reducer";
 export default function Addtaskdialog() {
   const [disabled, setdisabled] = useState(true);
   const dispatch = useDispatch();
+
   function detectInput(event: any) {
     if (event.target.value) {
       setdisabled(false);

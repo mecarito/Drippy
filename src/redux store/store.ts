@@ -3,6 +3,6 @@ import addtaskreducer from "../shared/reducers/taskdialog-reducer";
 
 export default configureStore({
   reducer: {
-    addtask: addtaskreducer,
+    openAddTaskDialog: addtaskreducer,
   },
 });

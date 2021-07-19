@@ -4,28 +4,17 @@ import Sidebar from "./sidebar";
 import Dialog from "@material-ui/core/Dialog";
 import Addtaskdialog from "./addTaskDialog";
 import { useSelector, useDispatch } from "react-redux";
-import {
-  openAddTaskDialog,
-  // closeAddTaskDialog,
-} from "./reducers/taskdialog-reducer";
+import { openAddTaskDialog } from "./reducers/taskdialog-reducer";
 
 export default function Navbar() {
-  const addtask = useSelector((state: any) => state.addtask.value);
+  const addtask = useSelector((state: any) => state.openAddTaskDialog.value);
   const dispatch = useDispatch();
 
   const [visibility, setvisibility] = useState(false);
-  // const [dialogvisibility, setdialogvisibility] = useState(false);
 
   function toggleDrawer(visibility: boolean) {
     setvisibility(visibility);
   }
-  // function openandclosedialog(toggle: boolean) {
-  //   setdialogvisibility(toggle);
-  // }
-
-  // function openAddTaskDialog() {
-
-  // }
   return (
     <>
       <div
@@ -68,10 +57,6 @@ export default function Navbar() {
         <Sidebar />
       </Drawer>
       <Dialog
-        // onClose={() => {
-        //   dispatch(closeAddTaskDialog());
-        //   console.log(addtask);
-        // }}
         aria-labelledby="simple-dialog-toaddtask"
         open={addtask}
         className="rounded-lg"
