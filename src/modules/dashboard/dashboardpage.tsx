@@ -20,21 +20,21 @@ export default function Dashboardpage() {
           <h1 className="text-2xl font-medium  text-black">Today</h1>
           <p className="text-sm text-gray-500">{Todaydate}</p>
         </div>
-        <div>
-          {tasks.map((task) => {
-            return (
-              <div
-                key={task}
-                className="flex flex-row space-x-4 content-start mb-2"
-              >
-                <div>
-                  <div className="w-4 h-4 rounded-full ring-1 ring-gray-500"></div>
-                </div>
-                <p className="overflow-y-auto">{task}</p>
+        {/* <div> */}
+        {tasks.map((task) => {
+          return (
+            <div
+              key={task}
+              className="flex flex-row space-x-4 items-start mb-2"
+            >
+              <div>
+                <div className="w-4 h-4 rounded-full ring-1 ring-gray-500 mt-2"></div>
               </div>
-            );
-          })}
-        </div>
+              <p className="overflow-y-auto">{task}</p>
+            </div>
+          );
+        })}
+        {/* </div> */}
         <button
           className="flex flex-row space-x-2 focus:outline-none
         cursor-pointer "
