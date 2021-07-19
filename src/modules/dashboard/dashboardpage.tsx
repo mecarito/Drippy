@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "../../shared/components/navbar";
+import Snackbar from "@material-ui/core/Snackbar";
 import { useDispatch, useSelector } from "react-redux";
 import { openAddTaskDialog } from "../../shared/reducers/taskdialog-reducer";
 
@@ -7,9 +8,17 @@ export default function Dashboardpage() {
   const dispatch = useDispatch();
   const tasks: [] = useSelector((state: any) => state.createtask.tasks);
   const Todaydate = new Date().toDateString();
+  const [snackbar, setsnackbar] = useState(false);
 
   function opendialog() {
     dispatch(openAddTaskDialog());
+  }
+
+  function deleteTask() {
+    setsnackbar(true);
+  }
+  function handleClose() {
+    setsnackbar(false);
   }
 
   return (
@@ -20,21 +29,19 @@ export default function Dashboardpage() {
           <h1 className="text-2xl font-medium  text-black">Today</h1>
           <p className="text-sm text-gray-500">{Todaydate}</p>
         </div>
-        {/* <div> */}
         {tasks.map((task) => {
           return (
             <div
               key={task}
               className="flex flex-row space-x-4 items-start mb-2"
             >
-              <div>
-                <div className="w-4 h-4 rounded-full ring-1 ring-gray-500 mt-1"></div>
+              <div onClick={deleteTask}>
+                <div className="w-4 h-4 rounded-full ring-1 ring-gray-500 mt-[6px]"></div>
               </div>
               <p className="overflow-y-auto">{task}</p>
             </div>
           );
         })}
-        {/* </div> */}
         <button
           className="flex flex-row space-x-2 focus:outline-none
         cursor-pointer "
@@ -44,6 +51,22 @@ export default function Dashboardpage() {
           <p className="text-gray-500 hover:text-primary">Add task</p>
         </button>
       </div>
+      <Snackbar
+        open={snackbar}
+        autoHideDuration={2000}
+        onClose={handleClose}
+        anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+      >
+        <div className="flex flex-row items-center justify-between gap-x-12">
+          <p> 1 item completed</p>
+          <div className="gap-x-2 flex flex-row items-center">
+            <p className="text-primary font-medium">undo</p>
+            <span className="material-icons text-gray-400 cursor-pointer">
+              close
+            </span>
+          </div>
+        </div>
+      </Snackbar>
     </div>
   );
 }
