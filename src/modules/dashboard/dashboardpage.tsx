@@ -28,7 +28,7 @@ export default function Dashboardpage() {
               className="flex flex-row space-x-4 items-start mb-2"
             >
               <div>
-                <div className="w-4 h-4 rounded-full ring-1 ring-gray-500 mt-2"></div>
+                <div className="w-4 h-4 rounded-full ring-1 ring-gray-500 mt-1"></div>
               </div>
               <p className="overflow-y-auto">{task}</p>
             </div>
