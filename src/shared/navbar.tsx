@@ -4,7 +4,10 @@ import Sidebar from "./sidebar";
 import Dialog from "@material-ui/core/Dialog";
 import Addtaskdialog from "./addTaskDialog";
 import { useSelector, useDispatch } from "react-redux";
-import { openAddTaskDialog } from "./reducers/taskdialog-reducer";
+import {
+  openAddTaskDialog,
+  // closeAddTaskDialog,
+} from "./reducers/taskdialog-reducer";
 
 export default function Navbar() {
   const addtask = useSelector((state: any) => state.addtask.value);
@@ -65,7 +68,10 @@ export default function Navbar() {
         <Sidebar />
       </Drawer>
       <Dialog
-        // onClose={() => dispatch(closeAddTaskDialog())}
+        // onClose={() => {
+        //   dispatch(closeAddTaskDialog());
+        //   console.log(addtask);
+        // }}
         aria-labelledby="simple-dialog-toaddtask"
         open={addtask}
         className="rounded-lg"

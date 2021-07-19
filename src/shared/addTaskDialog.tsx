@@ -17,7 +17,7 @@ export default function Addtaskdialog() {
         <p className="text-black">Quick Add Task</p>
         <span
           className="material-icons text-gray-400"
-          onClick={() => dispatch(closeAddTaskDialog)}
+          onClick={() => dispatch(closeAddTaskDialog())}
         >
           close
         </span>
