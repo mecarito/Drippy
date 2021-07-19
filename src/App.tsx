@@ -1,6 +1,6 @@
 import React from "react";
-import Navbar from "./shared/navbar";
+import Dashboardpage from "./modules/dashboard/dashboardpage";
 
 export default function App() {
-  return <Navbar />;
+  return <Dashboardpage />;
 }

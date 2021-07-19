@@ -4,7 +4,7 @@ import Sidebar from "./sidebar";
 import Dialog from "@material-ui/core/Dialog";
 import Addtaskdialog from "./addTaskDialog";
 import { useSelector, useDispatch } from "react-redux";
-import { openAddTaskDialog } from "./reducers/taskdialog-reducer";
+import { openAddTaskDialog } from "../reducers/taskdialog-reducer";
 
 export default function Navbar() {
   const addtask = useSelector((state: any) => state.openAddTaskDialog.value);
@@ -47,7 +47,7 @@ export default function Navbar() {
         className="fixed "
       >
         <span
-          className="material-icons absolute right-0 mr-4 mt-4"
+          className="material-icons absolute right-0 mr-4 mt-4 cursor-pointer"
           onClick={() => {
             toggleDrawer(false);
           }}
