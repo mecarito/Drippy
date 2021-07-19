@@ -17,7 +17,7 @@ export default function Dashboardpage() {
   function deleteTask() {
     setsnackbar(true);
   }
-  function handleClose() {
+  function closeSnackbar() {
     setsnackbar(false);
   }
 
@@ -53,15 +53,21 @@ export default function Dashboardpage() {
       </div>
       <Snackbar
         open={snackbar}
-        autoHideDuration={2000}
-        onClose={handleClose}
+        autoHideDuration={2500}
+        onClose={closeSnackbar}
         anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
       >
-        <div className="flex flex-row items-center justify-between gap-x-12">
+        <div
+          className="flex flex-row items-center justify-between gap-x-12
+        bg-white py-2 px-2"
+        >
           <p> 1 item completed</p>
           <div className="gap-x-2 flex flex-row items-center">
             <p className="text-primary font-medium">undo</p>
-            <span className="material-icons text-gray-400 cursor-pointer">
+            <span
+              className="material-icons text-gray-400 cursor-pointer"
+              onClick={closeSnackbar}
+            >
               close
             </span>
           </div>

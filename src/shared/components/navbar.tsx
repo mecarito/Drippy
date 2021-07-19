@@ -21,14 +21,14 @@ export default function Navbar() {
         className="bg-primary text-white py-2 px-2 flex flex-row justify-between
       cursor-pointer items-center fixed top-0 left-0 right-0"
       >
-        <div className="flex flex-row gap-2">
+        <div className="flex flex-row gap-2 sm:gap-x-8">
           <span className="material-icons" onClick={() => toggleDrawer(true)}>
             menu
           </span>
           <span className="material-icons">home</span>
           <span className="material-icons">search</span>
         </div>
-        <div className="flex flex-row gap-4">
+        <div className="flex flex-row gap-4 sm:gap-x-12">
           <span
             className="material-icons"
             onClick={() => dispatch(openAddTaskDialog())}
