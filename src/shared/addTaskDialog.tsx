@@ -1,17 +1,26 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { closeAddTaskDialog } from "./reducers/taskdialog-reducer";
 
 export default function Addtaskdialog() {
   const [disabled, setdisabled] = useState(true);
+  const dispatch = useDispatch();
   function detectInput(event: any) {
     if (event.target.value) {
       setdisabled(false);
     }
   }
+
   return (
     <div className="flex flex-col p-4 gap-y-2">
       <div className="flex flex-row justify-between items-center">
         <p className="text-black">Quick Add Task</p>
-        <span className="material-icons text-gray-400 ">close</span>
+        <span
+          className="material-icons text-gray-400"
+          onClick={() => dispatch(closeAddTaskDialog)}
+        >
+          close
+        </span>
       </div>
       <div>
         <textarea
