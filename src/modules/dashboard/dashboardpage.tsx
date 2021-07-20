@@ -29,10 +29,10 @@ export default function Dashboardpage() {
           <h1 className="text-2xl font-medium  text-black">Today</h1>
           <p className="text-sm text-gray-500">{Todaydate}</p>
         </div>
-        {tasks.map((task) => {
+        {tasks.map((task: string) => {
           return (
             <div
-              key={task}
+              key={task.split(" ")[0]}
               className="flex flex-row space-x-4 items-start mb-2"
             >
               <div onClick={deleteTask}>
